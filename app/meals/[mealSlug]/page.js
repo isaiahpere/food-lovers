@@ -1,4 +1,4 @@
-const MealDetails = () => {
+const MealDetails = ({ params }) => {
   return (
     <div>
       <h1>Meals Slug Page</h1>
