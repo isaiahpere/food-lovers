@@ -4,6 +4,15 @@ import { notFound } from "next/navigation"; // calls closest not found page
 import styles from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 
+export const generateMetadata = async ({ params }) => {
+  const meal = await getMeal(params.mealSlug);
+  if (!meal) notFound();
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+};
+
 const MealDetails = ({ params }) => {
   const meal = getMeal(params.mealSlug);
 

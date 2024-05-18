@@ -7,6 +7,11 @@ import MealsGrid from "@/components/meals/meals-grid";
 import Loading from "./loading-out";
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: "All Meals",
+  description: "All yummy meals to cook",
+};
+
 const Meals = async () => {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
